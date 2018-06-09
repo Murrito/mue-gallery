@@ -63,7 +63,7 @@ import KeyEventsMixin from './components/mixins/KeyEvents';
 import CarouselDragMixin from './components/mixins/CarouselDrag';
 import ZoomMixin from './components/mixins/Zoom';
 
-const noPhoto = '../static/no-photo.png';
+const noPhoto = require('./../static/no-photo.png');
 
 export default {
   components: {
