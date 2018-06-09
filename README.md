@@ -24,7 +24,7 @@ import MueGallery from 'mue-gallery';
 Vue.use(MueGallery);
 ```
 
-In you component:
+In your component:
 
 ```html
 <mue-gallery
@@ -38,7 +38,7 @@ In you component:
 | --- | --- | --- | --- |
 | `v-model` | `false` | `Boolean` | Controls if gallery pop-up is open or not |
 | [`images`](#images) | `[]` | `Array` | Your images list |
-| `index` | `0` | `Number` | Current displayed image |
+| `index` | `undefined` | `Number` | Current displayed image |
 | `embed` | `false` | `Boolean` | Set `true` to embed gallery into your page. If `true`, `v-model` is not needed |
 | `thumbs` | `true` | `Boolean` | Set `true` to show thumbnails |
 | `thumbs-position` | `'bottom'` | `String` | Thumbnails position. Possible values: `top`, `right`, `bottom`, `left` |

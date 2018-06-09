@@ -84,6 +84,8 @@ export default {
       return -(this.windowHeight - this.fullHeight) / 2;
     },
     style() {
+      const translateX = this.pos === 'left' ? '-100%' : '100%';
+      const translateY = this.pos === 'top' ? '-100%' : '100%';
       return {
         backgroundColor: this.$parent.background,
         width: this.vertical ? `${this.thumbWidth}px` : '100%',
@@ -92,7 +94,7 @@ export default {
         left: this.pos !== 'right' ? 0 : 'auto',
         bottom: this.pos !== 'top' ? 0 : 'auto',
         right: this.pos !== 'left' ? 0 : 'auto',
-        transform: `translateY(${this.$parent.isZoomed ? '100%' : 0})`,
+        transform: `translate3d(${!this.$parent.isZoomed ? 0 : translateX}, ${!this.$parent.isZoomed ? 0 : translateY}, 0)`,
       };
     },
     innerStyle() {

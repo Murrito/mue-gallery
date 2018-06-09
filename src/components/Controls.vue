@@ -61,10 +61,7 @@ export default {
       return this.$parent.activeItem ? this.$parent.activeItem.title : '';
     },
     style() {
-      return {
-        width: this.$parent.carouselStyle.width,
-        height: this.$parent.carouselStyle.height,
-      };
+      return this.$parent.carouselStyle;
     },
   },
 };

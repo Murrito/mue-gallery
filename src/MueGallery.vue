@@ -94,7 +94,7 @@ export default {
     },
     index: {
       type: Number,
-      default: 0,
+      default: undefined,
     },
     embed: {
       type: Boolean,
@@ -179,11 +179,17 @@ export default {
 
   watch: {
     open() {
+      if (this.open && this.index !== undefined) {
+        this.change();
+        this.active = this.index;
+      }
       document.documentElement.style.overflow = this.open && !this.embed ? 'hidden' : 'auto';
     },
     index(i) {
-      this.change();
-      this.goTo(i);
+      if (i !== undefined) {
+        this.change();
+        this.goTo(i);
+      }
     },
     images: {
       deep: true,
