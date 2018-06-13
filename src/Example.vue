@@ -39,7 +39,7 @@ export default {
   data() {
     return {
       gallery: false,
-      firstImageId: 2,
+      firstImageId: 0,
       photos,
     };
   },

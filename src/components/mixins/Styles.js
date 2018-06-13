@@ -29,11 +29,13 @@ export default {
       return style;
     },
     carouselStyle() {
+      const thumbsTop = this.thumbs && this.thumbsPos === 'top';
+      const thumbsLeft = this.thumbs && this.thumbsPos === 'left';
       return {
         width: `${this.isZoomed ? this.windowWidth : this.carouselWidth}px`,
         height: `${this.isZoomed ? this.windowHeight : this.carouselHeight}px`,
-        top: this.thumbs && this.thumbsPos === 'top' ? `${this.thumbHeight}px` : 0,
-        left: this.thumbs && this.thumbsPos === 'left' ? `${this.thumbWidth}px` : 0,
+        top: !this.isZoomed && thumbsTop ? `${this.thumbHeight}px` : 0,
+        left: !this.isZoomed && thumbsLeft ? `${this.thumbWidth}px` : 0,
       };
     },
     imagesStyle() {
