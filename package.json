@@ -1,6 +1,6 @@
 {
   "name": "mue-gallery",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "A Vue.js project",
   "author": "murrito",
   "main": "src/install.js",
