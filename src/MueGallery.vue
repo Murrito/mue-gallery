@@ -324,7 +324,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
   @mixin fulfill {
     position: absolute;
     top: 0;
@@ -358,7 +358,11 @@ export default {
 
     &:not(.mue-gallery--open):not(.mue-gallery--embed) {
       opacity: 0;
-      pointer-events: none;
+
+      &,
+      & * {
+        pointer-events: none;
+      }
 
       .mue-gallery__images {
         transform: translateY(100%);
