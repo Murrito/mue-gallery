@@ -32,10 +32,10 @@
             :style="imageItemStyle(i)"
             class="mue-gallery__image"
           >
-            <img
-              :src="items[i - 1].src"
+            <div
               :style="imageStyle(i)"
-            >
+              class="mue-gallery__image__inner"
+            />
           </div>
         </template>
       </div>
@@ -127,6 +127,10 @@ export default {
     counter: {
       type: Boolean,
       default: true,
+    },
+    zoom: {
+      type: Boolean,
+      default: false,
     },
   },
 
@@ -416,7 +420,7 @@ export default {
           @include fulfill;
         }
 
-        img {
+        &__inner {
           display: block;
           pointer-events: none;
           user-select: none;
@@ -430,7 +434,7 @@ export default {
     }
 
     &.after-drag {
-      .mue-gallery__image img {
+      .mue-gallery__image__inner {
         transition: transform .5s ease;
       }
     }

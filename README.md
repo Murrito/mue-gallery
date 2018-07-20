@@ -47,6 +47,7 @@ In your component:
 | `nav` | `true` | `Boolean` | Set `true` to show navigation arrows |
 | `caption` | `true` | `Boolean` | Set `true` to show current image title |
 | `counter` | `true` | `Boolean` | Set `true` to show images counter |
+| `zoom` | `false` | `Boolean` | Set `true` to allow images zoom |
 
 ### <a name="images"></a>images
 
