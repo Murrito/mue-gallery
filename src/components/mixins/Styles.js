@@ -100,6 +100,8 @@ export default {
         : (this.carouselHeight - height) / 2;
 
       return {
+        background: `url(${item.src}) top left no-repeat`,
+        backgroundSize: '100%',
         width: `${width}px`,
         height: `${height}px`,
         transform: `translateX(${offsetX}px) translateY(${offsetY}px)`,

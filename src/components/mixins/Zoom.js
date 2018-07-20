@@ -1,7 +1,7 @@
 export default {
   methods: {
     toggleZoom(center) {
-      if (this.noActivePhoto) {
+      if (this.noActivePhoto || !this.zoom) {
         return;
       }
 

@@ -112,7 +112,7 @@ export default {
       if (isClick) {
         if (this.embed) {
           this.$emit('select-image', this.active);
-        } else {
+        } else if (this.zoom) {
           this.toggleZoom();
         }
       } else if (Math.abs(this.carouselDragMoveDelta.x) > minDelta) {
