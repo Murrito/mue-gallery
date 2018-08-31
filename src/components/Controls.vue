@@ -11,14 +11,14 @@
 
     <template v-if="nav">
       <div
-        v-if="i > 0"
+        v-if="infinite || i > 0"
         class="mue-gallery__nav prev"
-        @click="$emit('goto', i - 1)"
+        @click="prev"
       />
       <div
-        v-if="i < total - 1"
+        v-if="infinite || (i < total - 1)"
         class="mue-gallery__nav next"
-        @click="$emit('goto', i + 1)"
+        @click="next"
       />
     </template>
 
@@ -36,6 +36,20 @@
 
 <script>
 export default {
+  props: {
+    next: {
+      type: Function,
+      default: () => {},
+    },
+    prev: {
+      type: Function,
+      default: () => {},
+    },
+    infinite: {
+      type: Boolean,
+      default: false,
+    },
+  },
   computed: {
     close() {
       return !this.$parent.embed;

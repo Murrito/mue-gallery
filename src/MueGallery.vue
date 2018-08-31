@@ -42,8 +42,10 @@
     </div>
 
     <mue-controls
+      :infinite="infinite"
+      :next="next"
+      :prev="prev"
       @close="close"
-      @goto="goTo"
     />
 
     <mue-thumbs
@@ -129,6 +131,10 @@ export default {
       default: true,
     },
     zoom: {
+      type: Boolean,
+      default: false,
+    },
+    infinite: {
       type: Boolean,
       default: false,
     },
@@ -292,10 +298,18 @@ export default {
       this.isZoomed = false;
     },
     prev() {
-      this.goTo(this.active - 1);
+      const id = this.infinite && this.active === 0
+        ? this.total
+        : this.active - 1;
+
+      this.goTo(id);
     },
     next() {
-      this.goTo(this.active + 1);
+      const id = this.infinite && this.active === (this.total - 1)
+        ? 0
+        : this.active + 1;
+
+      this.goTo(id);
     },
 
     onWindowResize() {
